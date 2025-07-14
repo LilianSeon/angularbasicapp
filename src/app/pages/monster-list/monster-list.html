@@ -1,0 +1,19 @@
+<div id="search-bar-container">
+	<app-search-bar (searchButtonClick)="increaseCount()" [search]="search()" (searchChange)="this.search.set($event)"/>
+</div>
+<p>
+	Search : <b>{{ search() }}</b><br/>
+	Clicked Count: {{ count }}
+</p>
+
+@if (filteredMonsters().length == 0) {
+ 	<div class="centered">No monsters found !</div>
+}
+
+<div id="card-list">
+ 	@for (monster of filteredMonsters(); track monster.name) {
+ 		<app-playing-card [my-monster]="monster"/>
+ 	} @empty {
+ 		<div class="centered">Found <b>{{ filteredMonsters().length }}</b> monsters</div>
+ 	}
+</div>
