@@ -1,5 +1,5 @@
 <div id="search-bar-container">
-	<app-search-bar (searchButtonClick)="increaseCount()" [search]="search()" (searchChange)="this.search.set($event)"/>
+	<app-search-bar (searchButtonClick)="increaseCount()" [search]="search()" (searchButtonClick)="this.search.set($event)" [filteredMonsters]="filteredMonsters()"/>
 </div>
 <p>
 	Search : <b>{{ search() }}</b><br/>

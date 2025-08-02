@@ -1,4 +1,5 @@
-<div id="search-bar">
-	<input placeholder="Search by name..." [(ngModel)]="search"/>
-	<button (click)="searchClick()"><img src="search.png"/></button>
+<div id="search-bar" class="flex flex-col mx-auto w-80 mt-8">
+	<!--<input placeholder="Search by name..." [(ngModel)]="search"/>
+	<button (click)="searchClick()"><img src="search.png"/></button>-->
+	<p-autocomplete styleClass="w-80" [suggestions]="filteredMonsters()" (completeMethod)="searchClick($event)" optionLabel="name" minQueryLength="{{ 0 }}"/>
 </div>
