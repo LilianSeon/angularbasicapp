@@ -19,7 +19,7 @@ export class MonsterList {
   search = model('');
 
   filteredMonsters = computed(() => {
- 		return this.monsters.filter(monster => monster.name.includes(this.search()));
+ 		return this.monsters.filter(monster => monster.name.toLocaleLowerCase().includes(this.search().toLocaleLowerCase()));
  	});
 
   constructor() {
